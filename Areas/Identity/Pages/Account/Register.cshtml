@@ -1,0 +1,77 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register here...";
+    var roles = (List<IdentityRole>)ViewData["roles"];
+}
+
+
+
+<div class="row" id="bkg">
+
+    @*<div class="site-blocks-cover overlay ">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12 text-center" data-aos="fade">
+
+                        <h1 style="color:white;">@ViewData["Title"]</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <br>
+            <div class="p-4 mb-5 bg-white">
+                <section>
+                    <img src="~/images/rhere.jpg" width="460" height="150" />
+                    <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <h4>Create a new account.</h4>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.ConfirmPassword"></label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Name"></label>
+                            <select asp-for="Input.Name" class="form-control"
+                                    asp-items='new SelectList(roles,"Id","Name")'></select>
+                            <span asp-validation-for="Input.Name" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </section>
+                <img src="~/images/reg.png" width="250" height="200" />
+            </div>
+
+
+        </div>
+
+        <div class="col-md-6">
+            <br>
+            <img src="~/images/gita.jpg" class="card-img-top" alt=".fsfsfsfdf" style="height:52.9rem; width:34.8rem">
+        </div>
+    </div>
+</div>
+
+
+

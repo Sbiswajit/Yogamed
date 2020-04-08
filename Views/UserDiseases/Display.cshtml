@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProjectYogaMed.Models.YogaTable>
+
+@{
+    ViewData["Title"] = "Display";
+}
+
+<h1>Display</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.YogaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YogaStep)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.YogaName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YogaStep)
+            </td>
+            
+            <td>
+               | <a asp-action="Download" asp-route-id="@item.YogaId">Download</a> 
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <partial name="DView" />
+</div>

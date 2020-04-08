@@ -1,0 +1,59 @@
+﻿@model ProjectYogaMed.Models.UserDisease
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row" id="bkg">
+
+    <div class="col-md-6">
+
+        <div class="site-blocks-cover overlay ">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12 text-center" data-aos="fade">
+
+                        <h2 style="color:white; font-family:'Century Schoolbook';"> User Disease</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="p-4 mb-5 bg-white">
+
+            <section>
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="form-group">
+                                <label asp-for="Disease" class="control-label"></label>
+                                <input asp-for="Disease" class="form-control" />
+                                <span asp-validation-for="Disease" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+                </div>
+            </section>
+            <br>
+            <p>   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;<img src="~/images/sick.png" width="300" height="280" /> </p>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        <br><br>
+        <img src="~/images/gita.jpg" class="card-img-top" alt=".fsfsfsfdf" style="height:49.2rem">
+    </div>
+
+</div>
+

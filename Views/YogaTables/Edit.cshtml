@@ -1,0 +1,44 @@
+﻿@model ProjectYogaMed.Models.YogaTable
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>YogaTable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="YogaId" />
+            <div class="form-group">
+                <label asp-for="YogaName" class="control-label"></label>
+                <input asp-for="YogaName" class="form-control" />
+                <span asp-validation-for="YogaName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YogaStep" class="control-label"></label>
+                <input asp-for="YogaStep" class="form-control" />
+                <span asp-validation-for="YogaStep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YdfkId" class="control-label"></label>
+                <select asp-for="YdfkId" class="form-control" asp-items="ViewBag.YdfkId"></select>
+                <span asp-validation-for="YdfkId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<div>
+    <partial name="DView" />
+</div>
