@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +16,11 @@ namespace ProjectYogaMed.Controllers
 public class UserDiseasesController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public UserDiseasesController(ApplicationDbContext context)
+        private readonly IWebHostEnvironment _env;
+        public UserDiseasesController(ApplicationDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         // GET: UserDiseases
@@ -74,21 +76,12 @@ public class UserDiseasesController : Controller
         public async Task<IActionResult> Download(int? id)
         {
             var filename = await _context.YogaTable.FindAsync(id);
-
-
-
-            var path = System.IO.Path.Combine(
-                          System.IO.Directory.GetCurrentDirectory(),
-                           "wwwroot/images", filename.YogaStep);
-
-            var memory = new System.IO.MemoryStream();
-            using (var stream = new System.IO.FileStream(path, System.IO.FileMode.Open))
-            {
-                await stream.CopyToAsync(memory);
-            }
-            //memory.Position = 0;
-
-            return File(memory, System.IO.Path.GetFileName(path));
+            var data = filename.YogaStep;
+            string upload = System.IO.Path.Combine(_env.WebRootPath, "images");
+            string filepath = System.IO.Path.Combine(upload, data);
+            byte[] fileBytes = System.IO.File.ReadAllBytes(filepath);
+            string file = data;
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, file);
 
         }
         // GET: UserDiseases/Edit/5

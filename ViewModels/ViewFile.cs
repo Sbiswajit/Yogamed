@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace ProjectYogaMed.ViewModels
@@ -17,5 +18,7 @@ namespace ProjectYogaMed.ViewModels
         public int? YdfkId { get; set; }
 
         public virtual DiseaseTable Ydfk { get; set; }
+        
     }
+    
 }
