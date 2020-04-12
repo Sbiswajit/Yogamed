@@ -1,49 +1,52 @@
 ﻿@model IEnumerable<ProjectYogaMed.Models.YogaTable>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Yoga List";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.YogaName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.YogaStep)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ydfk)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.YogaName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YogaStep)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ydfk.DiseaseId)
-            </td>
-            <td>
-                
-                <a asp-action="Delete" class="btn btn-primary"asp-route-id="@item.YogaId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<div>
-    <partial name="DView" />
+<div class="container">
+    <table class="table table-bordered text-light bg-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.YogaName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.YogaStep)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ydfk)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YogaName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YogaStep)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ydfk.DiseaseId)
+                    </td>
+                    <td>
+
+                        <a asp-action="Delete" class="btn btn-primary" asp-route-id="@item.YogaId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <partial name="DView" />
+    </div>
 </div>

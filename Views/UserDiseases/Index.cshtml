@@ -1,42 +1,45 @@
 ﻿@model IEnumerable<ProjectYogaMed.Models.UserDisease>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "User Disease List";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            
-            <th>
-                @Html.DisplayNameFor(model => model.Disease)
-            </th>
-           
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Disease)
-            </td>
-           
-            <td>
-                
-                <a asp-action="Delete" class="btn btn-primary" asp-route-id="@item.Udid">Delete</a>|
-                <a asp-action="Display" class="btn btn-primary" asp-route-id="@item.Udid">Display soluation</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<div>
-    <partial name="DView" />
+<div class="container">
+    <table class="table table-bordered text-light bg-dark">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Disease)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disease)
+                    </td>
+
+                    <td>
+
+                        <a asp-action="Delete" class="btn btn-primary" asp-route-id="@item.Udid">Delete</a>|
+                        <a asp-action="Display" class="btn btn-primary" asp-route-id="@item.Udid">Display solution</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <partial name="DView" />
+    </div>
 </div>

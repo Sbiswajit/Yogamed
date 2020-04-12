@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BISWAJIT\\source\\repos\\ProjectYogaMed\\ProjectYogaMed.csproj": {}
+    "C:\\Users\\Ankita Sharma\\Desktop\\ProjectYogaMed\\ProjectYogaMed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BISWAJIT\\source\\repos\\ProjectYogaMed\\ProjectYogaMed.csproj": {
+    "C:\\Users\\Ankita Sharma\\Desktop\\ProjectYogaMed\\ProjectYogaMed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BISWAJIT\\source\\repos\\ProjectYogaMed\\ProjectYogaMed.csproj",
+        "projectUniqueName": "C:\\Users\\Ankita Sharma\\Desktop\\ProjectYogaMed\\ProjectYogaMed.csproj",
         "projectName": "ProjectYogaMed",
-        "projectPath": "C:\\Users\\BISWAJIT\\source\\repos\\ProjectYogaMed\\ProjectYogaMed.csproj",
-        "packagesPath": "C:\\Users\\BISWAJIT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BISWAJIT\\source\\repos\\ProjectYogaMed\\obj\\",
+        "projectPath": "C:\\Users\\Ankita Sharma\\Desktop\\ProjectYogaMed\\ProjectYogaMed.csproj",
+        "packagesPath": "C:\\Users\\Ankita Sharma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ankita Sharma\\Desktop\\ProjectYogaMed\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\BISWAJIT\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Ankita Sharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -89,16 +93,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -107,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
